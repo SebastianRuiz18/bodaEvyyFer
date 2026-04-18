@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Evelyn & Fernando</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-section left">
+            <button id="menu-btn-trigger" class="nav-text"><span id="nav-menu-text">Menu</span></button>
+            <span class="divider"></span>
+        </div>
+        <div class="nav-section center">
+            <h1 ref="#" id="main-logo" class="logo">Evelyn & Fernando</h1>
+        </div>
+        <div class="nav-section right">
+            <span class="divider"></span>
+            <a href="#" id="nav-reserve-text" class="nav-text">Reserve</a>
+        </div>
+    </nav>
+
+    <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-box">
+            <div class="menu-items">
+                <div class="menu-link" data-index="0">Evelyn & Fernando</div>
+                <div class="menu-link" data-index="1">Ceremony & Party</div>
+                <div class="menu-link" data-index="2">Itinerary</div>
+                <div class="menu-link" data-index="3">Information</div>
+                <div class="menu-link" data-index="4">Registry</div>
+                <div class="menu-link" data-index="5">Rsvp</div>
+            </div>
+            <div class="menu-footer">
+                <div class="menu-footer-item" id="menu-home-btn">Home</div>
+                <div class="menu-footer-item" id="menu-contact-btn">Contact</div>
+                <div class="menu-footer-item lang-switch">
+                    <span class="lang-opt" data-lang="es">Es</span>
+                    <span class="lang-sep">/</span>
+                    <span class="lang-opt active-lang" data-lang="en">En</span>
+                </div>
+            </div>
+            <a href="https://www.instagram.com/madebysliver/" target="_blank" class="made-by-sliver">Made by Sliver</a>
+        </div>
+    </div>
+
+    <div id="nav-left" class="nav-zone zone-left"></div>
+    <div id="nav-right" class="nav-zone zone-right"></div>
+
+    <div id="bg-layer" class="bg-layer"></div>
+    <div id="bg-layer-next" class="bg-layer"></div>
+    <div class="overlay-dark"></div>
+
+    <div id="main-hero" class="middle-wrapper loading-state">
+        <p id="subtitle" class="top-subtitle fade-text">Welcome</p>
+        
+        <div class="swiper text-swiper">
+            <div class="swiper-wrapper" id="dynamic-swiper-wrapper"></div>
+        </div>
+
+        <a id="cta-btn" href="#" class="btn-box fade-text">Our Story</a>
+    </div>
+
+    <div id="details-layer" class="details-layer">
+        <div class="details-container">
+            <div id="next-section-bar" class="next-section-bar">
+                <span id="next-section-title" class="next-section-title">Next Section</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div id="details-bar" class="details-bar">
+                <span id="detail-bar-title" class="detail-bar-title">Current Title</span>
+                <div class="detail-toggle">
+                    <span id="detail-toggle-text">Details</span>
+                    <i id="detail-icon" class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+            <div id="details-content-box" class="details-content-box">
+                <button id="close-details-btn" class="close-details-absolute"><i class="fa-solid fa-xmark"></i></button>
+                <div class="scroll-content">
+                    <h3 id="detail-full-title" class="story-heading">Title</h3>
+                    <div id="detail-body-text" class="story-text"></div>
+                </div>
+            </div>
+        </div>
+        <button id="back-to-home" class="back-btn">Back</button>
+    </div>
+
+    <footer class="bottom-bar">
+        <div class="bottom-left">
+            <button id="music-btn" class="icon-btn"><i class="fa-solid fa-play"></i></button>
+            <span class="divider"></span>
+        </div>
+        <div class="bottom-right">
+            <span class="divider"></span>
+            <div class="lang-container">
+                <span class="lang-opt" data-lang="es">Es</span>
+                <span class="lang-sep">/</span>
+                <span class="lang-opt active-lang" data-lang="en">En</span>
+            </div>
+        </div>
+    </footer>
+
+    <audio id="bg-music" loop><source src="This Charming Man.mp3" type="audio/mpeg"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

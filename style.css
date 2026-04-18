@@ -1,0 +1,304 @@
+/* =========================================
+   1. TIPOGRAFÍA
+   ========================================= */
+@font-face { font-family: 'FuturaCyrillicLight'; src: url('fonts/FuturaCyrillicBook.woff2') format('woff2'), url('fonts/FuturaCyrillicBook.woff') format('woff'); font-weight: normal; font-style: normal; font-display: swap; }
+@font-face { font-family: 'DidotTitlePro'; src: url('fonts/Didot.woff2') format('woff2'), url('fonts/Didot.woff') format('woff'); font-weight: normal; font-style: normal; font-display: swap; }
+
+/* =========================================
+   2. RESET Y BASE
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #33001a; font-family: 'DidotTitlePro', serif; overflow: hidden; height: 100vh; height: 100svh; color: #FFF; }
+.fade-text { transition: opacity 0.3s ease; }
+
+.menu-text-active { opacity: 0.6 !important; }
+
+/* =========================================
+   3. BARRAS DE NAVEGACIÓN
+   ========================================= */
+.navbar, .bottom-bar { position: fixed; left: 0; width: 100%; height: 50px; background-color: #660033; display: flex; justify-content: space-between; align-items: center; z-index: 2000; }
+.navbar { top: 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
+.bottom-bar { bottom: 0; border-top: 1px solid rgba(255,255,255,0.15); }
+.nav-section, .bottom-left, .bottom-right { display: flex; align-items: center; height: 100%; }
+.nav-section.center { position: absolute; left: 50%; transform: translateX(-50%); }
+
+.nav-text, .icon-btn {
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 14px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+.nav-text:hover, .icon-btn:hover { opacity: 0.7; }
+.divider { display: block; width: 1px; height: 20px; background-color: rgba(255,255,255,0.3); }
+
+/* Logo principal */
+.logo { font-family: 'Pinyon Script', cursive; font-size: 1.6rem; font-weight: normal; color: #fff; white-space: nowrap; cursor: pointer; }
+#main-logo { font-family: 'Pinyon Script', cursive; color: #fff; text-decoration: none; white-space: nowrap; font-size: 1.6rem; text-transform: none; }
+
+/* ESTILO PARA LA SECCIÓN DEL CHEF */
+.chef-container { text-align: center; }
+.chef-photo { width: 100%; max-width: 250px; height: auto; border-radius: 4px; margin-bottom: 15px; filter: grayscale(20%); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+/* =========================================
+   4. MENÚ OVERLAY
+   ========================================= */
+.menu-overlay { position: fixed; top: 50px; left: 0; width: 100%; height: calc(100% - 100px); background-color: rgba(51, 0, 26, 0.75); z-index: 1500; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
+.menu-overlay.active { opacity: 1; visibility: visible; }
+.menu-box { background-color: #FFF; width: 90%; max-width: 420px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.4); display: flex; flex-direction: column; }
+
+.menu-link {
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 18px 0;
+    color: #660033;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(102, 0, 51, 0.1);
+    transition: background 0.2s, color 0.2s;
+}
+.menu-link:hover { background-color: #fcf8f9; color: #33001a; }
+.menu-items .menu-link:last-child { border-bottom: none; }
+.menu-footer { display: flex; justify-content: space-between; border-top: 1px solid rgba(102, 0, 51, 0.1); background-color: #FFF; }
+.menu-footer-item {
+    flex: 1;
+    text-align: center;
+    padding: 13px 0;
+    font-size: 0.65rem;
+    font-family: 'DidotTitlePro', serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #660033;
+    border-right: 1px solid rgba(102, 0, 51, 0.1);
+    cursor: pointer;
+}
+.menu-footer-item:last-child { border-right: none; }
+.menu-footer-item:hover { background-color: #fcf8f9; color: #33001a; }
+
+.menu-footer .lang-opt { color: rgba(102, 0, 51, 0.4); }
+.menu-footer .active-lang { color: #660033 !important; }
+
+.made-by-sliver { display: block; text-align: center; font-family: 'FuturaCyrillicLight', sans-serif; font-size: 0.58rem; letter-spacing: 2.5px; text-transform: uppercase; color: #660033; text-decoration: none; padding: 13px 0; transition: color 0.3s ease; border-top: 1px solid rgba(102, 0, 51, 0.1); }
+.made-by-sliver:hover { color: #33001a; }
+
+/* =========================================
+   5. CAPA DE DETALLES
+   ========================================= */
+.details-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 50; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 70px; }
+.details-container { width: 90%; max-width: 500px; pointer-events: auto; display: flex; flex-direction: column; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+body.details-mode .details-container { opacity: 1; transform: translateY(0); }
+
+.next-section-bar { background-color: #FFF; border: 1px solid #660033; border-bottom: none; height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; cursor: pointer; transition: background 0.3s; }
+.next-section-bar:hover { background-color: #fcf8f9; }
+.next-section-title {
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #660033;
+}
+.next-section-bar i { color: #660033; font-size: 0.7rem; }
+
+.details-bar { background-color: #FFF; border: 1px solid #660033; height: 48px; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; cursor: pointer; transition: background 0.3s; }
+.details-bar:hover { background-color: #fcf8f9; }
+.detail-bar-title {
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #660033;
+}
+.detail-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #660033;
+}
+
+.details-content-box { background-color: #FFF; border-left: 1px solid #660033; border-right: 1px solid #660033; border-bottom: 1px solid #660033; overflow: hidden; max-height: 0; transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1); position: relative; }
+.details-content-box.expanded { max-height: 60vh; }
+.scroll-content { padding: 32px 26px; overflow-y: auto; max-height: 60vh; text-align: center; }
+.close-details-absolute { position: absolute; top: 12px; right: 16px; background: none; border: none; cursor: pointer; font-size: 1rem; color: #660033; z-index: 5; }
+
+/* Título interno en Script */
+.story-heading {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-weight: normal;
+    color: #660033;
+    text-transform: none;
+    text-shadow: none;
+}
+#detail-body-text, #detail-body-text p { color: #33001a !important; font-family: 'DidotTitlePro', serif; font-size: 0.88rem; line-height: 1.75; font-weight: normal; text-shadow: none; text-transform: none; }
+#detail-body-text a { color: #660033; text-decoration: underline; font-weight: bold; }
+
+.back-btn { margin-top: 14px; background: none; border: none; color: #FFF; font-family: 'DidotTitlePro', serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.5s; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
+body.details-mode .back-btn { opacity: 0.9; pointer-events: auto; }
+body.details-mode .back-btn:hover { opacity: 1; text-decoration: underline; }
+
+/* =========================================
+   6. BACKGROUND + OVERLAY
+   ========================================= */
+.lang-container { height: 100%; display: flex; align-items: center; padding: 0 14px; font-family: 'DidotTitlePro', serif; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.5px; }
+.lang-sep { color: rgba(255,255,255,0.3); margin: 0 6px; }
+.bottom-bar .lang-opt { cursor: pointer; color: rgba(255,255,255,0.4); transition: color 0.3s ease; }
+.bottom-bar .active-lang { color: #FFF !important; }
+
+.bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; --bg-img: url(''); background-image: var(--bg-img); background-position: center center; background-size: cover; background-repeat: no-repeat; transition: opacity 0.8s ease-out; }
+#bg-layer-next { display: none; }
+
+@media (min-width: 768px) {
+    .bg-layer { background-size: contain; background-color: #33001a; }
+    .bg-layer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: var(--bg-img); background-size: cover; background-position: center center; filter: blur(20px) brightness(0.6); transform: scale(1.1); z-index: -1; transition: opacity 0.4s ease-out; }
+}
+
+
+
+/* =========================================
+   7. WRAPPER CENTRAL
+   ========================================= */
+.middle-wrapper { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; z-index: 10; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+.middle-wrapper * { pointer-events: auto; }
+body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY(-40%); pointer-events: none; }
+
+.top-subtitle {
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #FFF;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   8. SWIPER
+   ========================================= */
+.text-swiper { width: 100%; height: 70px; overflow: visible !important; }
+.swiper-slide { width: auto !important; height: 100%; display: flex !important; align-items: center !important; justify-content: center !important; opacity: 0.3; transition: opacity 0.5s ease, transform 0.5s ease; transform: scale(0.9); margin: 0; padding: 0; cursor: grab; box-sizing: border-box; }
+.swiper-slide-active { opacity: 1; transform: scale(1); z-index: 10; }
+.slide-inner { display: flex; justify-content: center; align-items: center; width: 100%; }
+
+.slide-title {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.8rem;
+    color: #F4F1E8;
+    white-space: nowrap;
+    font-weight: normal;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    margin: 0;
+    text-align: center;
+    text-transform: none;
+}
+
+.btn-box {
+    margin-top: 22px;
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #F4F1E8;
+    color: #660033;
+    text-decoration: none;
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: opacity 0.3s, transform 0.2s, background-color 0.3s;
+}
+.btn-box:hover { background-color: #FFF; transform: translateY(-2px); }
+
+/* =========================================
+   9. MEDIA QUERIES — DESKTOP
+   ========================================= */
+.nav-zone { display: none; }
+
+@media (min-width: 768px) {
+    /* Navbar height restaurado */
+    .navbar, .bottom-bar { height: 55px; }
+    .menu-overlay { top: 55px; height: calc(100% - 110px); }
+
+    /* Logo desktop */
+    #main-logo { font-size: 2.5rem; }
+    .logo { font-size: 2.2rem; }
+
+    /* Nav buttons desktop */
+    .nav-text, .icon-btn { font-size: 0.72rem; letter-spacing: 2px; padding: 0 25px; }
+
+    /* Lang container desktop */
+    .lang-container { padding: 0 25px; font-size: 0.72rem; letter-spacing: 2px; }
+
+    /* Slide title desktop */
+    .slide-title { font-size: 5rem; }
+    .text-swiper { height: 80px; }
+
+    /* Subtitle desktop */
+    .top-subtitle { font-size: 0.75rem; letter-spacing: 4px; margin-bottom: 20px; }
+
+    /* CTA button desktop */
+    .btn-box { margin-top: 40px; padding: 15px 42px; font-size: 0.78rem; letter-spacing: 3px; }
+
+    /* Story heading desktop */
+    .story-heading { font-size: 2.8rem; margin-bottom: 20px; }
+
+    /* Detail body text desktop */
+    #detail-body-text, #detail-body-text p { font-size: 0.95rem; }
+
+    /* Detail bars desktop */
+    .detail-bar-title { font-size: 0.82rem; letter-spacing: 2px; }
+    .detail-toggle { font-size: 0.72rem; letter-spacing: 2px; }
+    .next-section-title { font-size: 0.68rem; letter-spacing: 2px; }
+    .next-section-bar { height: 45px; }
+    .details-bar { height: 50px; }
+
+    /* Menu overlay desktop */
+    .menu-link { font-size: 1rem; letter-spacing: 3px; padding: 22px 0; }
+    .menu-footer-item { font-size: 0.72rem; letter-spacing: 2px; padding: 15px 0; }
+    .made-by-sliver { font-size: 0.6rem; letter-spacing: 3px; padding: 15px 0; }
+
+    /* Back button desktop */
+    .back-btn { font-size: 0.78rem; }
+
+    /* Nav zones desktop */
+    .nav-zone { display: block; position: fixed; top: 55px; bottom: 55px; width: 50%; z-index: 5; }
+    .zone-left { left: 0; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M15 18l-6-6 6-6"/></svg>') 20 20, pointer; }
+    .zone-right { right: 0; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 18l6-6-6-6"/></svg>') 20 20, pointer; }
+    body.details-mode .nav-zone { display: none; }
+    .swiper-slide { padding: 0 60px; }
+    .details-container { width: 500px; }
+}
+
+/* =========================================
+   10. ESTILOS RSVP FORM
+   ========================================= */
+.rsvp-step-container { width: 100%; text-align: left; margin-top: 16px; }
+.rsvp-label { display: block; font-family: 'DidotTitlePro', serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #660033; margin-bottom: 6px; margin-top: 20px; }
+.rsvp-input { width: 100%; border: none; border-bottom: 1px solid rgba(102, 0, 51, 0.4); padding: 7px 0; font-family: 'DidotTitlePro', serif; font-size: 0.9rem; color: #33001a; outline: none; background: transparent; border-radius: 0; transition: border 0.3s; }
+.rsvp-input:focus { border-bottom: 1px solid #660033; }
+.input-error { border-bottom: 1px solid #cc0000 !important; }
+
+.rsvp-textarea { width: 100%; border: none; border-bottom: 1px solid rgba(102, 0, 51, 0.4); padding: 7px 0; font-family: 'DidotTitlePro', serif; font-size: 0.9rem; color: #33001a; outline: none; background: transparent; border-radius: 0; resize: none; height: 40px; }
+.rsvp-textarea:focus { border-bottom: 1px solid #660033; }
+
+.rsvp-error { color: #cc0000; font-family: 'FuturaCyrillicLight', sans-serif; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; display: none; }
+.rsvp-btn { width: 100%; background-color: #660033; color: #FFF; border: none; padding: 16px; margin-top: 26px; font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2.5px; cursor: pointer; transition: background 0.3s; }
+.rsvp-btn:hover { background-color: #33001a; }
+
+.guest-block { margin-bottom: 26px; border-bottom: 1px dashed rgba(102, 0, 51, 0.2); padding-bottom: 22px; }
+.guest-block:last-child { border-bottom: none; }
+.guest-number { font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: #660033; margin-bottom: 12px; }
+.radio-group { display: flex; gap: 18px; margin-top: 10px; }
+.radio-label { font-family: 'DidotTitlePro', serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; color: #33001a; display: flex; align-items: center; gap: 6px; cursor: pointer; }
