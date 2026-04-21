@@ -8,7 +8,7 @@
    2. RESET Y BASE
    ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #33001a; font-family: 'DidotTitlePro', serif; overflow: hidden; height: 100vh; height: 100svh; color: #FFF; }
+body { background-color: #3c0000; font-family: 'DidotTitlePro', serif; overflow: hidden; height: 100vh; height: 100svh; color: #FFF; }
 .fade-text { transition: opacity 0.3s ease; }
 
 .menu-text-active { opacity: 0.6 !important; }
@@ -16,7 +16,7 @@ body { background-color: #33001a; font-family: 'DidotTitlePro', serif; overflow:
 /* =========================================
    3. BARRAS DE NAVEGACIÓN
    ========================================= */
-.navbar, .bottom-bar { position: fixed; left: 0; width: 100%; height: 50px; background-color: #660033; display: flex; justify-content: space-between; align-items: center; z-index: 2000; }
+.navbar, .bottom-bar { position: fixed; left: 0; width: 100%; height: 50px; background-color: #3c0000; display: flex; justify-content: space-between; align-items: center; z-index: 2000; }
 .navbar { top: 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
 .bottom-bar { bottom: 0; border-top: 1px solid rgba(255,255,255,0.15); }
 .nav-section, .bottom-left, .bottom-right { display: flex; align-items: center; height: 100%; }
@@ -63,12 +63,12 @@ body { background-color: #33001a; font-family: 'DidotTitlePro', serif; overflow:
     letter-spacing: 2px;
     text-align: center;
     padding: 18px 0;
-    color: #660033;
+    color: #3c0000;
     cursor: pointer;
     border-bottom: 1px solid rgba(102, 0, 51, 0.1);
     transition: background 0.2s, color 0.2s;
 }
-.menu-link:hover { background-color: #fcf8f9; color: #33001a; }
+.menu-link:hover { background-color: #fcf8f9; color: #3c0000; }
 .menu-items .menu-link:last-child { border-bottom: none; }
 .menu-footer { display: flex; justify-content: space-between; border-top: 1px solid rgba(102, 0, 51, 0.1); background-color: #FFF; }
 .menu-footer-item {
@@ -79,18 +79,18 @@ body { background-color: #33001a; font-family: 'DidotTitlePro', serif; overflow:
     font-family: 'DidotTitlePro', serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #660033;
+    color: #3c0000;
     border-right: 1px solid rgba(102, 0, 51, 0.1);
     cursor: pointer;
 }
 .menu-footer-item:last-child { border-right: none; }
-.menu-footer-item:hover { background-color: #fcf8f9; color: #33001a; }
+.menu-footer-item:hover { background-color: #fcf8f9; color: #3c0000; }
 
 .menu-footer .lang-opt { color: rgba(102, 0, 51, 0.4); }
-.menu-footer .active-lang { color: #660033 !important; }
+.menu-footer .active-lang { color: #3c0000 !important; }
 
-.made-by-sliver { display: block; text-align: center; font-family: 'FuturaCyrillicLight', sans-serif; font-size: 0.58rem; letter-spacing: 2.5px; text-transform: uppercase; color: #660033; text-decoration: none; padding: 13px 0; transition: color 0.3s ease; border-top: 1px solid rgba(102, 0, 51, 0.1); }
-.made-by-sliver:hover { color: #33001a; }
+.made-by-sliver { display: block; text-align: center; font-family: 'FuturaCyrillicLight', sans-serif; font-size: 0.58rem; letter-spacing: 2.5px; text-transform: uppercase; color: #3c0000; text-decoration: none; padding: 13px 0; transition: color 0.3s ease; border-top: 1px solid rgba(102, 0, 51, 0.1); }
+.made-by-sliver:hover { color: #3c0000; }
 
 /* =========================================
    5. CAPA DE DETALLES
@@ -99,25 +99,25 @@ body { background-color: #33001a; font-family: 'DidotTitlePro', serif; overflow:
 .details-container { width: 90%; max-width: 500px; pointer-events: auto; display: flex; flex-direction: column; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
 body.details-mode .details-container { opacity: 1; transform: translateY(0); }
 
-.next-section-bar { background-color: #FFF; border: 1px solid #660033; border-bottom: none; height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; cursor: pointer; transition: background 0.3s; }
+.next-section-bar { background-color: #FFF; border: 1px solid #3c0000; border-bottom: none; height: 40px; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; cursor: pointer; transition: background 0.3s; }
 .next-section-bar:hover { background-color: #fcf8f9; }
 .next-section-title {
     font-family: 'DidotTitlePro', serif;
     font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #660033;
+    color: #3c0000;
 }
-.next-section-bar i { color: #660033; font-size: 0.7rem; }
+.next-section-bar i { color: #3c0000; font-size: 0.7rem; }
 
-.details-bar { background-color: #FFF; border: 1px solid #660033; height: 48px; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; cursor: pointer; transition: background 0.3s; }
+.details-bar { background-color: #FFF; border: 1px solid #3c0000; height: 48px; display: flex; justify-content: space-between; align-items: center; padding: 0 18px; cursor: pointer; transition: background 0.3s; }
 .details-bar:hover { background-color: #fcf8f9; }
 .detail-bar-title {
     font-family: 'DidotTitlePro', serif;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #660033;
+    color: #3c0000;
 }
 .detail-toggle {
     display: flex;
@@ -127,13 +127,13 @@ body.details-mode .details-container { opacity: 1; transform: translateY(0); }
     font-size: 0.62rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #660033;
+    color: #3c0000;
 }
 
-.details-content-box { background-color: #FFF; border-left: 1px solid #660033; border-right: 1px solid #660033; border-bottom: 1px solid #660033; overflow: hidden; max-height: 0; transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1); position: relative; }
+.details-content-box { background-color: #FFF; border-left: 1px solid #3c0000; border-right: 1px solid #3c0000; border-bottom: 1px solid #3c0000; overflow: hidden; max-height: 0; transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1); position: relative; }
 .details-content-box.expanded { max-height: 60vh; }
 .scroll-content { padding: 32px 26px; overflow-y: auto; max-height: 60vh; text-align: center; }
-.close-details-absolute { position: absolute; top: 12px; right: 16px; background: none; border: none; cursor: pointer; font-size: 1rem; color: #660033; z-index: 5; }
+.close-details-absolute { position: absolute; top: 12px; right: 16px; background: none; border: none; cursor: pointer; font-size: 1rem; color: #3c0000; z-index: 5; }
 
 /* Título interno en Script */
 .story-heading {
@@ -141,12 +141,12 @@ body.details-mode .details-container { opacity: 1; transform: translateY(0); }
     font-size: 2rem;
     margin-bottom: 16px;
     font-weight: normal;
-    color: #660033;
+    color: #3c0000;
     text-transform: none;
     text-shadow: none;
 }
-#detail-body-text, #detail-body-text p { color: #33001a !important; font-family: 'DidotTitlePro', serif; font-size: 0.88rem; line-height: 1.75; font-weight: normal; text-shadow: none; text-transform: none; }
-#detail-body-text a { color: #660033; text-decoration: underline; font-weight: bold; }
+#detail-body-text, #detail-body-text p { color: #3c0000 !important; font-family: 'DidotTitlePro', serif; font-size: 0.88rem; line-height: 1.75; font-weight: normal; text-shadow: none; text-transform: none; }
+#detail-body-text a { color: #3c0000; text-decoration: underline; font-weight: bold; }
 
 .back-btn { margin-top: 14px; background: none; border: none; color: #FFF; font-family: 'DidotTitlePro', serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.5s; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
 body.details-mode .back-btn { opacity: 0.9; pointer-events: auto; }
@@ -164,7 +164,7 @@ body.details-mode .back-btn:hover { opacity: 1; text-decoration: underline; }
 #bg-layer-next { display: none; }
 
 @media (min-width: 768px) {
-    .bg-layer { background-size: contain; background-color: #33001a; }
+    .bg-layer { background-size: contain; background-color: #3c0000; }
     .bg-layer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: var(--bg-img); background-size: cover; background-position: center center; filter: blur(20px) brightness(0.6); transform: scale(1.1); z-index: -1; transition: opacity 0.4s ease-out; }
 }
 
@@ -194,16 +194,24 @@ body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY
 .swiper-slide-active { opacity: 1; transform: scale(1); z-index: 10; }
 .slide-inner { display: flex; justify-content: center; align-items: center; width: 100%; }
 
-.slide-title {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.8rem;
-    color: #F4F1E8;
-    white-space: nowrap;
-    font-weight: normal;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
-    margin: 0;
-    text-align: center;
-    text-transform: none;
+/* El texto principal de las slides sí lleva Script */
+.slide-title { 
+    font-family: 'Pinyon Script', cursive; 
+    font-size: 2.8rem; /* Bajamos de 4.5rem a algo mucho más razonable para móvil */
+    color: #F4F1E8; 
+    white-space: nowrap; 
+    font-weight: normal; 
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+    margin: 0; 
+    text-align: center; 
+    text-transform: none; 
+}
+
+/* ESTILO PARA EL MONOGRAMA DEL CARRUSEL */
+.slide-monogram {
+    width: 12rem;
+    filter: drop-shadow(0px 4px 12px rgba(0,0,0,0.9)) drop-shadow(0px 0px 40px rgba(60,0,0,0.8));
+    margin-bottom: 5rem;
 }
 
 .btn-box {
@@ -211,7 +219,7 @@ body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY
     display: inline-block;
     padding: 12px 28px;
     background-color: #F4F1E8;
-    color: #660033;
+    color: #3c0000;
     text-decoration: none;
     font-family: 'DidotTitlePro', serif;
     font-size: 0.62rem;
@@ -277,7 +285,19 @@ body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY
     .zone-left { left: 0; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M15 18l-6-6 6-6"/></svg>') 20 20, pointer; }
     .zone-right { right: 0; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 18l6-6-6-6"/></svg>') 20 20, pointer; }
     body.details-mode .nav-zone { display: none; }
+    /* ... el resto de tus reglas desktop ... */
     .swiper-slide { padding: 0 60px; }
+    
+    .slide-title { font-size: 4rem; } /* Bajamos de 5.5rem a 4rem */
+    
+    /* ESTILO PARA EL MONOGRAMA DEL CARRUSEL */
+    .slide-monogram {
+        width: 12rem;
+        filter: drop-shadow(0px 4px 12px rgba(0,0,0,0.9)) drop-shadow(0px 0px 40px rgba(60,0,0,0.8));
+        margin-bottom: 5rem;
+    }
+    
+    .btn-box { margin-top: 45px; padding: 16px 45px; font-size: 0.85rem; }
     .details-container { width: 500px; }
 }
 
@@ -285,20 +305,20 @@ body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY
    10. ESTILOS RSVP FORM
    ========================================= */
 .rsvp-step-container { width: 100%; text-align: left; margin-top: 16px; }
-.rsvp-label { display: block; font-family: 'DidotTitlePro', serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #660033; margin-bottom: 6px; margin-top: 20px; }
-.rsvp-input { width: 100%; border: none; border-bottom: 1px solid rgba(102, 0, 51, 0.4); padding: 7px 0; font-family: 'DidotTitlePro', serif; font-size: 0.9rem; color: #33001a; outline: none; background: transparent; border-radius: 0; transition: border 0.3s; }
-.rsvp-input:focus { border-bottom: 1px solid #660033; }
+.rsvp-label { display: block; font-family: 'DidotTitlePro', serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #3c0000; margin-bottom: 6px; margin-top: 20px; }
+.rsvp-input { width: 100%; border: none; border-bottom: 1px solid rgba(102, 0, 51, 0.4); padding: 7px 0; font-family: 'DidotTitlePro', serif; font-size: 0.9rem; color: #3c0000; outline: none; background: transparent; border-radius: 0; transition: border 0.3s; }
+.rsvp-input:focus { border-bottom: 1px solid #3c0000; }
 .input-error { border-bottom: 1px solid #cc0000 !important; }
 
-.rsvp-textarea { width: 100%; border: none; border-bottom: 1px solid rgba(102, 0, 51, 0.4); padding: 7px 0; font-family: 'DidotTitlePro', serif; font-size: 0.9rem; color: #33001a; outline: none; background: transparent; border-radius: 0; resize: none; height: 40px; }
-.rsvp-textarea:focus { border-bottom: 1px solid #660033; }
+.rsvp-textarea { width: 100%; border: none; border-bottom: 1px solid rgba(102, 0, 51, 0.4); padding: 7px 0; font-family: 'DidotTitlePro', serif; font-size: 0.9rem; color: #3c0000; outline: none; background: transparent; border-radius: 0; resize: none; height: 40px; }
+.rsvp-textarea:focus { border-bottom: 1px solid #3c0000; }
 
 .rsvp-error { color: #cc0000; font-family: 'FuturaCyrillicLight', sans-serif; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; display: none; }
-.rsvp-btn { width: 100%; background-color: #660033; color: #FFF; border: none; padding: 16px; margin-top: 26px; font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2.5px; cursor: pointer; transition: background 0.3s; }
-.rsvp-btn:hover { background-color: #33001a; }
+.rsvp-btn { width: 100%; background-color: #3c0000; color: #FFF; border: none; padding: 16px; margin-top: 26px; font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2.5px; cursor: pointer; transition: background 0.3s; }
+.rsvp-btn:hover { background-color: #3c0000; }
 
 .guest-block { margin-bottom: 26px; border-bottom: 1px dashed rgba(102, 0, 51, 0.2); padding-bottom: 22px; }
 .guest-block:last-child { border-bottom: none; }
-.guest-number { font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: #660033; margin-bottom: 12px; }
+.guest-number { font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: #3c0000; margin-bottom: 12px; }
 .radio-group { display: flex; gap: 18px; margin-top: 10px; }
-.radio-label { font-family: 'DidotTitlePro', serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; color: #33001a; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.radio-label { font-family: 'DidotTitlePro', serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; color: #3c0000; display: flex; align-items: center; gap: 6px; cursor: pointer; }

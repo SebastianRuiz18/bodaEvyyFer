@@ -94,16 +94,17 @@ const accessCodes = {
 const slidesData = [
     { 
         img: 'assets/EvyFer.jpeg', 
-        subtitle: { en: 'Welcome', es: 'Bienvenidos' }, 
+        subtitle: { en: '', es: '' }, 
         btnText: { en: 'Our Story', es: 'Nuestra Historia' }, 
         title: { en: 'Evelyn & Fernando', es: 'Evelyn & Fernando' }, 
+        monogramImg: 'Wmonogram.webp',
         detailsContent: {
             en: `<p><strong>The Digital Spark that Started it All</strong></p><br><p>It all started in 2005 with a "friend request." Evelyn and Fernando first connected in the digital world of MySpace, but the real magic happened when they finally met in person at their favorite local spot, Porky’s.</p><br><p>They spent the next few years building a foundation of deep friendship, laughter, and shared memories that naturally blossomed into a romance in 2008, and they haven’t been apart since. Seventeen years later, their world is more vibrant than ever, shared with their three children: Fernando, Natalia, and Loki.</p><br><p>From a 2005 friend request to a lifetime of love, we can't wait to celebrate the next chapter with you!</p>`,
             es: `<p><strong>La chispa digital que lo inició todo</strong></p><br><p>Todo comenzó en el 2005 con una "solicitud de amistad". Evelyn y Fernando conectaron por primera vez en el mundo digital de MySpace, pero la verdadera magia ocurrió cuando finalmente se conocieron en persona en su lugar local favorito: Porky’s.</p><br><p>Pasaron los siguientes años construyendo una base de amistad profunda, risas y recuerdos compartidos que florecieron naturalmente en un romance en el 2008, y desde entonces no se han separado. Diecisiete años después, su mundo es más vibrante que nunca, compartido con sus tres hijos: Fernando, Natalia y Loki.</p><br><p>Desde una solicitud de amistad en el 2005 hasta toda una vida de amor, ¡estamos ansiosos por celebrar el próximo capítulo con ustedes!</p>`
         }
     },
     { 
-        img: 'https://i.pinimg.com/736x/34/e2/be/34e2bee74f0ac07872e734ddb1c62ae8.jpg', 
+        img: 'https://images.squarespace-cdn.com/content/v1/521ecf21e4b06244c31827be/1627450736814-W7HRSRLR3S1JNTQPT1MQ/hacienda_ochil_4.jpg', 
         subtitle: { en: 'Our Union', es: 'Nuestra Unión' }, 
         btnText: { en: 'Location', es: 'Ubicación' }, 
         title: { en: 'Wedding Day', es: 'Día de la Boda' }, 
@@ -123,7 +124,7 @@ const slidesData = [
         }
     },
     {
-        img: 'https://i.pinimg.com/736x/d4/47/d6/d447d6a685797df574ef956338fd79d2.jpg', 
+        img: 'https://i.pinimg.com/736x/34/e2/be/34e2bee74f0ac07872e734ddb1c62ae8.jpg', 
         subtitle: { en: 'Food & Drinks', es: 'Comida y Bebida' }, 
         btnText: { en: 'View Menu', es: 'Ver Menú' }, 
         title: { en: 'Menu', es: 'Menú' }, 
@@ -191,7 +192,14 @@ function rebuildSwiper(initialIndex = 0) {
     slidesData.forEach(slide => {
         const slideDiv = document.createElement('div');
         slideDiv.className = 'swiper-slide';
-        slideDiv.innerHTML = `<div class="slide-inner"><h2 class="slide-title">${slide.title[currentLang]}</h2></div>`;
+        
+        // 👇 AQUI ESTA LA MAGIA: Verifica si existe el monograma
+        if (slide.monogramImg) {
+            slideDiv.innerHTML = `<div class="slide-inner"><img src="${slide.monogramImg}" alt="Monogram" class="slide-monogram"></div>`;
+        } else {
+            slideDiv.innerHTML = `<div class="slide-inner"><h2 class="slide-title">${slide.title[currentLang]}</h2></div>`;
+        }
+        
         swiperWrapper.appendChild(slideDiv);
     });
 
