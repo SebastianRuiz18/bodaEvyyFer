@@ -192,7 +192,7 @@ body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY
 .text-swiper { width: 100%; height: 70px; overflow: visible !important; }
 .swiper-slide { width: auto !important; height: 100%; display: flex !important; align-items: center !important; justify-content: center !important; opacity: 0.3; transition: opacity 0.5s ease, transform 0.5s ease; transform: scale(0.9); margin: 0; padding: 0; cursor: grab; box-sizing: border-box; }
 .swiper-slide-active { opacity: 1; transform: scale(1); z-index: 10; }
-.slide-inner { display: flex; justify-content: center; align-items: center; width: 100%; }
+.slide-inner { display: flex; justify-content: center; align-items: center; width: 100%; height: 20%; }
 
 /* El texto principal de las slides sí lleva Script */
 .slide-title { 
