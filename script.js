@@ -93,11 +93,11 @@ const accessCodes = {
 // DATOS DE SECCIONES (Adaptados a Evelyn & Fernando)
 const slidesData = [
     { 
-        img: 'assets/EvyFer.jpeg', 
+        img: 'assets/EvyFer.webp', 
         subtitle: { en: '', es: '' }, 
         btnText: { en: 'Our Story', es: 'Nuestra Historia' }, 
         title: { en: 'Evelyn & Fernando', es: 'Evelyn & Fernando' }, 
-        monogramImg: 'Wmonogram.webp',
+        monogramImg: '/assets/Wmonogram.webp',
         detailsContent: {
             en: `<p><strong>The Digital Spark that Started it All</strong></p><br><p>It all started in 2005 with a "friend request." Evelyn and Fernando first connected in the digital world of MySpace, but the real magic happened when they finally met in person at their favorite local spot, Porky’s.</p><br><p>They spent the next few years building a foundation of deep friendship, laughter, and shared memories that naturally blossomed into a romance in 2008, and they haven’t been apart since. Seventeen years later, their world is more vibrant than ever, shared with their three children: Fernando, Natalia, and Loki.</p><br><p>From a 2005 friend request to a lifetime of love, we can't wait to celebrate the next chapter with you!</p>`,
             es: `<p><strong>La chispa digital que lo inició todo</strong></p><br><p>Todo comenzó en el 2005 con una "solicitud de amistad". Evelyn y Fernando conectaron por primera vez en el mundo digital de MySpace, pero la verdadera magia ocurrió cuando finalmente se conocieron en persona en su lugar local favorito: Porky’s.</p><br><p>Pasaron los siguientes años construyendo una base de amistad profunda, risas y recuerdos compartidos que florecieron naturalmente en un romance en el 2008, y desde entonces no se han separado. Diecisiete años después, su mundo es más vibrante que nunca, compartido con sus tres hijos: Fernando, Natalia y Loki.</p><br><p>Desde una solicitud de amistad en el 2005 hasta toda una vida de amor, ¡estamos ansiosos por celebrar el próximo capítulo con ustedes!</p>`
@@ -114,7 +114,7 @@ const slidesData = [
         }
     },
     { 
-        img: 'https://i.pinimg.com/1200x/fd/2b/94/fd2b94e0f1535dddb31f657e8306ec99.jpg', 
+        img: 'https://i.pinimg.com/webp/736x/08/08/3a/08083a8c32b491ad59552066630b23a3.webp', 
         subtitle: { en: 'The Big Day', es: 'El Gran Día' }, 
         btnText: { en: 'View Schedule', es: 'Ver Horarios' }, 
         title: { en: 'Itinerary', es: 'Itinerario' }, 
@@ -124,7 +124,7 @@ const slidesData = [
         }
     },
     {
-        img: 'https://i.pinimg.com/736x/34/e2/be/34e2bee74f0ac07872e734ddb1c62ae8.jpg', 
+        img: 'https://i.pinimg.com/webp/1200x/54/ac/81/54ac81a36e2859dd8c4c13e249d133c8.webp', 
         subtitle: { en: 'Food & Drinks', es: 'Comida y Bebida' }, 
         btnText: { en: 'View Menu', es: 'Ver Menú' }, 
         title: { en: 'Menu', es: 'Menú' }, 
@@ -154,14 +154,14 @@ const slidesData = [
         }
     },
     { 
-        img: 'https://scontent.ftij1-3.fna.fbcdn.net/v/t39.30808-6/549250303_1728370821199753_5825079844252163391_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=el_NrXxwyNcQ7kNvwG36Fq9&_nc_oc=AdohjYjg2MxNyTI0gJkoJrY8vyAuLQ6H5ALbM-ubxzsbY-PMfBGTlD3yTvN3B5wqUbM&_nc_zt=23&_nc_ht=scontent.ftij1-3.fna&_nc_gid=yCDLMlGYQyDDTPZyUDlSmA&_nc_ss=7a389&oh=00_Af2cUZEWP0SgqJkqcUwQ2VBsFgbv0bIBPLzldoCYtjtZ7g&oe=69E8B919', 
+        img: 'https://i.pinimg.com/webp/1200x/fe/a0/7e/fea07e2001294d49896859236a39e537.webp', 
         subtitle: { en: 'Confirm Attendance', es: 'Confirma Asistencia' }, 
         btnText: { en: 'Reserve Spot', es: 'Reservar Lugar' }, 
         title: { en: 'Rsvp', es: 'Rsvp' }, 
         isRSVP: true
     },
     { 
-        img: 'https://i.pinimg.com/736x/4e/e1/cc/4ee1ccc8eb392763c6638b42eae0a062.jpg', 
+        img: 'https://i.pinimg.com/webp/736x/d1/82/ff/d182ff4ac47769508f0e224303287251.webp', 
         subtitle: { en: 'Questions?', es: '¿Tienes Dudas?' }, 
         btnText: { en: 'Write Us', es: 'Escribirnos' }, 
         title: { en: 'Contact', es: 'Contacto' }, 
