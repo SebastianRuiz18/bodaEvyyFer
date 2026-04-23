@@ -161,7 +161,8 @@ const slidesData = [
         isRSVP: true
     },
     { 
-        img: 'https://i.pinimg.com/webp/736x/d1/82/ff/d182ff4ac47769508f0e224303287251.webp', 
+        // img: 'https://i.pinimg.com/webp/736x/d1/82/ff/d182ff4ac47769508f0e224303287251.webp',
+        img: 'assets/monogrampattern.webp', 
         subtitle: { en: 'Questions?', es: '¿Tienes Dudas?' }, 
         btnText: { en: 'Write Us', es: 'Escribirnos' }, 
         title: { en: 'Contact', es: 'Contacto' }, 
