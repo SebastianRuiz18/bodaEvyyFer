@@ -134,7 +134,7 @@ const slidesData = [
         }
     },
     { 
-        img: 'https://i.pinimg.com/1200x/31/a5/59/31a559969b4598a2a521c5f0e212b276.jpg', 
+        img: 'assets/Venue2.webp', 
         subtitle: { en: 'Important Details', es: 'Detalles Importantes' }, 
         btnText: { en: 'Guest Guide', es: 'Guía del Invitado' }, 
         title: { en: 'Information', es: 'Información' }, 
