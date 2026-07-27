@@ -109,8 +109,8 @@ const slidesData = [
         btnText: { en: 'Location', es: 'Ubicación' }, 
         title: { en: 'Wedding Day', es: 'Día de la Boda' }, 
         detailsContent: {
-            en: `<p><strong>February 20, 2027</strong></p><br><p><strong>Hacienda San Pedro Ochil</strong></p><p>Carr. Mérida - Uxmal km 176.5<br>Mérida, Yucatán</p><br><p><a href="https://maps.app.goo.gl/SE7rW7JHZ44fd2Sz5" target="_blank" style="text-decoration:underline;">Open in Google Maps</a></p>`,
-            es: `<p><strong>20 de Febrero, 2027</strong></p><br><p><strong>Hacienda San Pedro Ochil</strong></p><p>Carr. Mérida - Uxmal km 176.5<br>Mérida, Yucatán</p><br><p><a href="https://maps.app.goo.gl/SE7rW7JHZ44fd2Sz5" target="_blank" style="text-decoration:underline;">Abrir en Google Maps</a></p>`
+            en: `<p><strong>Welcome Drinks</strong></p><p><strong>February 19th, 2027</strong></p><br><p><strong>Hacienda San Pedro Ochil</strong></p><p><strong>February 20th, 2027</strong></p><br><p>Carr. Mérida - Uxmal km 176.5<br>Mérida, Yucatán</p><br><p><a href="https://maps.app.goo.gl/SE7rW7JHZ44fd2Sz5" target="_blank" style="text-decoration:underline;">Open in Google Maps</a></p>`,
+            es: `<p><strong>Cóctel de Bienvenida</strong></p><p><strong>19 de Febrero, 2027</strong></p><br><p><strong>Hacienda San Pedro Ochil</strong></p><p><strong>20 de Febrero, 2027</strong></p><br><p>Carr. Mérida - Uxmal km 176.5<br>Mérida, Yucatán</p><br><p><a href="https://maps.app.goo.gl/SE7rW7JHZ44fd2Sz5" target="_blank" style="text-decoration:underline;">Abrir en Google Maps</a></p>`
         }
     },
     { 
@@ -139,8 +139,34 @@ const slidesData = [
         btnText: { en: 'Guest Guide', es: 'Guía del Invitado' }, 
         title: { en: 'Information', es: 'Información' }, 
         detailsContent: {
-            en: `<p><strong>Dress Code</strong></p><p>Formal garden attire. <br><em>(Pinterest Mood Board Link Pending)</em></p><br><p><strong>Kids</strong></p><p>Adults Only Event.</p><br><p><strong>Transportation (Shuttles)</strong></p><p>Pending.</p><br><p><strong>Hotel Recommendations</strong></p><p>Pending.</p>`,
-            es: `<p><strong>Código de Vestimenta</strong></p><p>Formal para jardín. <br><em>(Link de inspiración en Pinterest pendiente)</em></p><br><p><strong>Niños</strong></p><p>Evento solo para adultos.</p><br><p><strong>Transporte (Shuttles)</strong></p><p>Próximamente.</p><br><p><strong>Hoteles Recomendados</strong></p><p>Próximamente.</p>`
+            en: `
+                <p><strong>Dress Code: Formal</strong></p>
+                <p>We can't wait to celebrate with you at the hacienda! To match the elegant, historic setting while staying comfortable in Mérida's beautiful tropical climate, we ask our guests to join us in Formal attire made of lightweight, breathable fabrics. Have fun with colors and patterns, but we kindly ask that guests avoid wearing white or brown so those colors can remain special for the bride and groom.</p>
+                <p><a href="https://pin.it/3RbNvXY62" target="_blank" style="text-decoration: underline; color: inherit;">Women's Inspiration</a> &nbsp;|&nbsp; <a href="https://pin.it/6eIWdKpDv" target="_blank" style="text-decoration: underline; color: inherit;">Men's Inspiration</a></p>
+                <br>
+                <p><strong>Event is Adults Only</strong></p>
+                <p>To allow all our guests—including parents—a chance to fully immerse themselves in a night of celebration and fun, we have chosen for our wedding day to be an adults-only occasion. We hope this advance notice means you are still able to share our big day!</p>
+                <br>
+                <p><strong>Transportation (Shuttles)</strong></p>
+                <p>Pending.</p>
+                <br>
+                <p><strong>Hotel Recommendations</strong></p>
+                <p>Pending.</p>
+            `,
+            es: `
+                <p><strong>Código de Vestimenta: Formal</strong></p>
+                <p>¡No podemos esperar para celebrar con ustedes en la hacienda! Para estar a tono con el entorno elegante e histórico, y al mismo tiempo estar cómodos en el hermoso clima tropical de Mérida, les pedimos a nuestros invitados que nos acompañen con vestimenta formal de telas ligeras y frescas. ¡Diviértanse con los colores y estampados! Solo les pedimos amablemente evitar el uso de blanco o marrón (café) para que esos colores sigan siendo especiales para la novia y el novio.</p>
+                <p><a href="https://pin.it/3RbNvXY62" target="_blank" style="text-decoration: underline; color: inherit;">Inspiración Mujeres</a> &nbsp;|&nbsp; <a href="https://pin.it/6eIWdKpDv" target="_blank" style="text-decoration: underline; color: inherit;">Inspiración Hombres</a></p>
+                <br>
+                <p><strong>Celebración exclusiva para adultos</strong></p>
+                <p>Con el fin de ofrecer a todos nuestros invitados —incluyendo a los padres de familia— una gran noche de fiesta y diversión ininterrumpida, hemos optado por una celebración exclusiva para adultos. Confiamos en que este aviso anticipado les permita compartir con nosotros este día tan especial.</p>
+                <br>
+                <p><strong>Transporte (Shuttles)</strong></p>
+                <p>Próximamente.</p>
+                <br>
+                <p><strong>Hoteles Recomendados</strong></p>
+                <p>Próximamente.</p>
+            `
         }
     },
     { 
@@ -167,8 +193,30 @@ const slidesData = [
         btnText: { en: 'Write Us', es: 'Escribirnos' }, 
         title: { en: 'Contact', es: 'Contacto' }, 
         detailsContent: {
-            en: `<p><em>Contact details (Name, number, email, or social media) pending...</em></p>`,
-            es: `<p><em>Detalles de contacto (Nombre, número, correo o redes) próximamente...</em></p>`
+            en: `
+                <p>We can't wait to celebrate with you!</p>
+                <br>
+                <p>To help make your journey and stay smooth, our event planner is available to answer any logistics or planning questions you might have.</p>
+                <br>
+                <p><strong>Joe Bolaños</strong><br>Event Planner</p>
+                <p><a href="tel:+529902317477" style="text-decoration: underline; color: inherit;">+52 990 231 7477</a></p>
+                <p><a href="mailto:joebolanosevents@gmail.com" style="text-decoration: underline; color: inherit;">joebolanosevents@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/joebolanosevents" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">@joebolanosevents</a></p>
+                <br>
+                <p>For assistance with venue details, feel free to call, text, or email Joe at your convenience.</p>
+            `,
+            es: `
+                <p>¡No podemos esperar para celebrar con ustedes!</p>
+                <br>
+                <p>Para que su viaje y estancia sean lo más agradables posible, nuestra coordinadora de eventos está a su disposición para responder cualquier pregunta sobre la logística o la organización.</p>
+                <br>
+                <p><strong>Joe Bolaños</strong><br>Event Planner</p>
+                <p><a href="tel:+529902317477" style="text-decoration: underline; color: inherit;">+52 990 231 7477</a></p>
+                <p><a href="mailto:joebolanosevents@gmail.com" style="text-decoration: underline; color: inherit;">joebolanosevents@gmail.com</a></p>
+                <p><a href="https://www.instagram.com/joebolanosevents" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">@joebolanosevents</a></p>
+                <br>
+                <p>Para recibir asistencia con los detalles del lugar, no duden en llamar, enviar un mensaje de texto o un correo electrónico a Joe.</p>
+            `
         }
     }
 ];
