@@ -124,7 +124,7 @@ const slidesData = [
         }
     },
     {
-        img: 'https://i.pinimg.com/webp/1200x/54/ac/81/54ac81a36e2859dd8c4c13e249d133c8.webp', 
+        img: 'assets/mantel.webp', 
         subtitle: { en: 'Food & Drinks', es: 'Comida y Bebida' }, 
         btnText: { en: 'View Menu', es: 'Ver Menú' }, 
         title: { en: 'Menu', es: 'Menú' }, 
@@ -180,7 +180,7 @@ const slidesData = [
         }
     },
     { 
-        img: 'https://i.pinimg.com/webp/1200x/fe/a0/7e/fea07e2001294d49896859236a39e537.webp', 
+        img: 'assets/venue22.webp', 
         subtitle: { en: 'Confirm Attendance', es: 'Confirma Asistencia' }, 
         btnText: { en: 'Reserve Spot', es: 'Reservar Lugar' }, 
         title: { en: 'Rsvp', es: 'Rsvp' }, 
