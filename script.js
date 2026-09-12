@@ -23,9 +23,13 @@ const translations = {
         attendingLabel: "Will this guest be attending?",
         yes: "Yes",
         no: "No",
+        mealLabel: "Meal Preference",
+        beef: "Beef",
+        fish: "Fish",
+        vegetarian: "Vegetarian",
         emailLabel: "Email (Main Contact)",
         phoneLabel: "Phone",
-        dietLabel: "Dietary Restrictions",
+        dietLabel: "Food Allergies / Dietary Restrictions",
         none: "None",
         messageLabel: "Message for the Couple",
         songLabel: "Must-play song request",
@@ -60,9 +64,13 @@ const translations = {
         attendingLabel: "¿Asistirá a la boda?",
         yes: "Sí",
         no: "No",
+        mealLabel: "Opción de Platillo",
+        beef: "Res",
+        fish: "Pescado",
+        vegetarian: "Vegetariano",
         emailLabel: "Email (Contacto Principal)",
         phoneLabel: "Teléfono",
-        dietLabel: "Restricciones Alimenticias",
+        dietLabel: "Alergias / Restricciones Alimenticias",
         none: "Ninguna",
         messageLabel: "Mensaje para la Pareja",
         songLabel: "Canción que no puede faltar",
@@ -79,7 +87,7 @@ const translations = {
 };
 
 // ==========================================
-// CÓDIGOS DE ACCESO (NUEVA LÓGICA)
+// CÓDIGOS DE ACCESO
 // ==========================================
 const accessCodes = {
     "SOLO1": 1,
@@ -97,7 +105,7 @@ const slidesData = [
         subtitle: { en: '', es: '' }, 
         btnText: { en: 'Our Story', es: 'Nuestra Historia' }, 
         title: { en: 'Evelyn & Fernando', es: 'Evelyn & Fernando' }, 
-        monogramImg: '/assets/Wmonogram.webp',
+        monogramImg: 'assets/Wmonogram.webp',
         detailsContent: {
             en: `<p><strong>The Digital Spark that Started it All</strong></p><br><p>It all started in 2005 with a "friend request." Evelyn and Fernando first connected in the digital world of MySpace, but the real magic happened when they finally met in person at their favorite local spot, Porky’s.</p><br><p>They spent the next few years building a foundation of deep friendship, laughter, and shared memories that naturally blossomed into a romance in 2008, and they haven’t been apart since. Seventeen years later, their world is more vibrant than ever, shared with their three children: Fernando, Natalia, and Loki.</p><br><p>From a 2005 friend request to a lifetime of love, we can't wait to celebrate the next chapter with you!</p>`,
             es: `<p><strong>La chispa digital que lo inició todo</strong></p><br><p>Todo comenzó en el 2005 con una "solicitud de amistad". Evelyn y Fernando conectaron por primera vez en el mundo digital de MySpace, pero la verdadera magia ocurrió cuando finalmente se conocieron en persona en su lugar local favorito: Porky’s.</p><br><p>Pasaron los siguientes años construyendo una base de amistad profunda, risas y recuerdos compartidos que florecieron naturalmente en un romance en el 2008, y desde entonces no se han separado. Diecisiete años después, su mundo es más vibrante que nunca, compartido con sus tres hijos: Fernando, Natalia y Loki.</p><br><p>Desde una solicitud de amistad en el 2005 hasta toda una vida de amor, ¡estamos ansiosos por celebrar el próximo capítulo con ustedes!</p>`
@@ -119,18 +127,296 @@ const slidesData = [
         btnText: { en: 'View Schedule', es: 'Ver Horarios' }, 
         title: { en: 'Itinerary', es: 'Itinerario' }, 
         detailsContent: {
-            en: `<p><em>Pending details... Coming soon.</em></p>`,
-            es: `<p><em>Detalles pendientes... Próximamente.</em></p>`
+            en: `
+                <p style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; font-size: 0.95rem;"><strong>Saturday, Feb 20</strong></p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Transportation to Venue</strong><br>
+                    Pick-up: Hotel NH Collection<br>
+                    Time: 3:00 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Arrival & Welcome</strong><br>
+                    Location: Hacienda San Pedro Ochil<br>
+                    Time: 4:00 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Ceremony</strong><br>
+                    Time: 4:30 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Cocktail Hour</strong><br>
+                    Time: 5:00 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Dinner</strong><br>
+                    Time: 7:00 PM
+                </p>
+
+                <p style="margin-bottom: 30px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Party</strong><br>
+                    Time: 8:30 PM
+                </p>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 50%; margin: 0 auto 15px auto;"></div>
+                
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <em><strong>Return Shuttles</strong><br>
+                    Departures to Mérida (Hotel NH Collection) will begin at 10:00 PM and run every hour until the final shuttle at 2:00 AM.</em>
+                </p>
+            `,
+            es: `
+                <p style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; font-size: 0.95rem;"><strong>Sábado 20 de Febrero</strong></p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Transporte a la Hacienda</strong><br>
+                    Punto de salida: Hotel NH Collection<br>
+                    Hora: 3:00 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Llegada y Bienvenida</strong><br>
+                    Lugar: Hacienda San Pedro Ochil<br>
+                    Hora: 4:00 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Ceremonia</strong><br>
+                    Hora: 4:30 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Cóctel</strong><br>
+                    Hora: 5:00 PM
+                </p>
+
+                <p style="margin-bottom: 18px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Cena</strong><br>
+                    Hora: 7:00 PM
+                </p>
+
+                <p style="margin-bottom: 30px; line-height: 1.5;">
+                    <strong style="font-size: 1.05rem;">Fiesta</strong><br>
+                    Hora: 8:30 PM
+                </p>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 50%; margin: 0 auto 15px auto;"></div>
+                
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <em><strong>Transporte de Regreso</strong><br>
+                    Las salidas hacia Mérida (Hotel NH Collection) comenzarán a las 10:00 PM y saldrán cada hora hasta el último viaje a las 2:00 AM.</em>
+                </p>
+            `
         }
     },
     {
         img: 'assets/mantel.webp', 
-        subtitle: { en: 'Food & Drinks', es: 'Comida y Bebida' }, 
-        btnText: { en: 'View Menu', es: 'Ver Menú' }, 
-        title: { en: 'Menu', es: 'Menú' }, 
+        subtitle: { en: 'Where to Stay', es: 'Dónde Hospedarse' }, 
+        btnText: { en: 'View Hotels', es: 'Ver Hoteles' }, 
+        title: { en: 'Accommodations', es: 'Hospedaje' }, 
         detailsContent: {
-            en: `<p><em>Menu is currently pending. Check back later!</em></p>`,
-            es: `<p><em>El menú está pendiente. ¡Vuelve a revisar pronto!</em></p>`
+            en: `
+                <p style="margin-bottom: 25px; font-size: 0.9rem; line-height: 1.6;">
+                    We have secured special group rates at the following hotels for our wedding weekend in Mérida. We recommend booking early, as rates and room blocks are subject to availability.
+                </p>
+
+                <!-- HOTEL 1: NH COLLECTION -->
+                <div style="margin-bottom: 25px; text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
+                        <strong>NH Collection Mérida Paseo Montejo</strong>
+                    </p>
+                    <p style="font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: #660033; margin-bottom: 12px;">
+                        <em>Official Shuttle Pick-up Location</em>
+                    </p>
+
+                    <p style="margin-bottom: 10px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Code:</strong> BODAES&FM<br>
+                        <strong>Dates:</strong> Feb 18 – Feb 22, 2027<br>
+                        <em>(Available 2 nights before & 2 nights after)</em>
+                    </p>
+
+                    <p style="margin-bottom: 12px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Superior Room (Room Only):</strong> $2,200 MXN / night<br>
+                        <strong>Superior Room (Breakfast Included):</strong> $2,700 MXN / night<br>
+                        <span style="font-size: 0.75rem; opacity: 0.8;">*Rates before taxes (16% IVA + 4.5% ISH)</span>
+                    </p>
+
+                    <p style="font-size: 0.85rem; line-height: 1.6;">
+                        <strong>To Book:</strong><br>
+                        Call: <a href="tel:+529999640400" style="text-decoration: underline; color: inherit;">+52 999 964 0400 Ext. 0</a><br>
+                        Email: <a href="mailto:mp.hernandez@nh-hotels.com,ka.lopez@nh-hotels.com,ar.wong@nh-hotels.com?subject=Reserva%20Boda%20Evelyn%20y%20Fernando" style="text-decoration: underline; color: inherit;">Contact Reservations</a><br>
+                        <em>Mention code: Boda Evelyn Sandoval & Fernando Mejía</em>
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
+
+                <!-- HOTEL 2: COURTYARD MARRIOTT -->
+                <div style="margin-bottom: 25px; text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 8px;">
+                        <strong>Courtyard by Marriott Mérida Downtown</strong>
+                    </p>
+
+                    <p style="margin-bottom: 10px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Group Code:</strong> EFW<br>
+                        <strong>Standard Room:</strong> $2,200 MXN / night<br>
+                        <strong>Linen Suites:</strong> $3,600 MXN / night<br>
+                        <strong>Extra Guest:</strong> $500 MXN / night<br>
+                        <span style="font-size: 0.75rem; opacity: 0.8;">*Rates in MXN plus applicable taxes</span>
+                    </p>
+
+                    <p style="margin-bottom: 12px;">
+                        <a href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1783723372625&key=GRP&app=resvlink&_p=c11c3edc990466eee31e8de3eab3&__branch_flow_type=chrome_deepview&__branch_flow_id=1627117433924184485&inventoryMissing=true" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: bold; color: inherit; font-size: 0.9rem;">
+                            → Book Online with Special Rate
+                        </a>
+                    </p>
+
+                    <p style="font-size: 0.85rem; line-height: 1.6;">
+                        Call: <a href="tel:+529994543000" style="text-decoration: underline; color: inherit;">+52 999 454 3000</a><br>
+                        Email: <a href="mailto:midcy_reservaciones2@grupopresidente.com?subject=Reserva%20Boda%20Evelyn%20y%20Fernando" style="text-decoration: underline; color: inherit;">midcy_reservaciones2@grupopresidente.com</a><br>
+                        <em style="font-size: 0.75rem;">Cancellation: Free up to 5 days prior to arrival.</em>
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
+
+                <!-- HOTEL 3: BOUTIQUE HOTELS -->
+                <div style="margin-bottom: 25px; text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
+                        <strong>Boutique Hotels</strong>
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 15px;">
+                        Use promo code <strong>"EVY&FERNANDO"</strong> directly on their websites for a special discount:
+                    </p>
+
+                    <!-- Hotel Óntico -->
+                    <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Hotel Óntico Urban Design</strong><br>
+                        <a href="https://hotelontico.com.mx/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">hotelontico.com.mx</a><br>
+                        Tel: <a href="tel:+529994294747" style="text-decoration: underline; color: inherit;">+52 999 429 4747</a> | <a href="https://instagram.com/hotelontico" target="_blank" style="text-decoration: underline; color: inherit;">@hotelontico</a>
+                    </p>
+
+                    <!-- Piedra de Agua -->
+                    <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Hotel Piedra de Agua</strong><br>
+                        <a href="https://piedradeagua.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">piedradeagua.com</a><br>
+                        Tel: <a href="tel:+529994242300" style="text-decoration: underline; color: inherit;">+52 999 424 2300</a> | <a href="https://instagram.com/piedradeagua" target="_blank" style="text-decoration: underline; color: inherit;">@piedradeagua</a>
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
+
+                <!-- HOTEL 4: PENDING -->
+                <div style="text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; opacity: 0.8;">
+                        <strong>Holiday Inn Centro</strong><br>
+                        <em>Rates and booking details coming soon.</em>
+                    </p>
+                </div>
+            `,
+            es: `
+                <p style="margin-bottom: 25px; font-size: 0.9rem; line-height: 1.6;">
+                    Hemos gestionado tarifas preferenciales en los siguientes hoteles para su estancia en Mérida. Les recomendamos reservar con anticipación, ya que las tarifas y bloques de habitaciones están sujetos a disponibilidad.
+                </p>
+
+                <!-- HOTEL 1: NH COLLECTION -->
+                <div style="margin-bottom: 25px; text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
+                        <strong>NH Collection Mérida Paseo Montejo</strong>
+                    </p>
+                    <p style="font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: #660033; margin-bottom: 12px;">
+                        <em>Punto Oficial de Salida de Transportes</em>
+                    </p>
+
+                    <p style="margin-bottom: 10px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Código:</strong> BODAES&FM<br>
+                        <strong>Fechas:</strong> 18 al 22 de Febrero, 2027<br>
+                        <em>(Válido 2 noches antes y 2 noches después)</em>
+                    </p>
+
+                    <p style="margin-bottom: 12px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Hab. Superior (Sin alimentos):</strong> $2,200 MXN / noche<br>
+                        <strong>Hab. Superior (Con desayuno):</strong> $2,700 MXN / noche<br>
+                        <span style="font-size: 0.75rem; opacity: 0.8;">*Tarifas por noche antes de impuestos (16% IVA + 4.5% ISH)</span>
+                    </p>
+
+                    <p style="font-size: 0.85rem; line-height: 1.6;">
+                        <strong>Para reservar:</strong><br>
+                        Tel: <a href="tel:+529999640400" style="text-decoration: underline; color: inherit;">999 964 0400 Ext. 0</a><br>
+                        Correo: <a href="mailto:mp.hernandez@nh-hotels.com,ka.lopez@nh-hotels.com,ar.wong@nh-hotels.com?subject=Reserva%20Boda%20Evelyn%20y%20Fernando" style="text-decoration: underline; color: inherit;">Contactar Reservaciones</a><br>
+                        <em>Mencionar código: Boda Evelyn Sandoval & Fernando Mejía</em>
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
+
+                <!-- HOTEL 2: COURTYARD MARRIOTT -->
+                <div style="margin-bottom: 25px; text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 8px;">
+                        <strong>Courtyard by Marriott Mérida Downtown</strong>
+                    </p>
+
+                    <p style="margin-bottom: 10px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Código de Grupo:</strong> EFW<br>
+                        <strong>Estándar (Sencilla o Doble):</strong> $2,200 MXN / noche<br>
+                        <strong>Linen Suites:</strong> $3,600 MXN / noche<br>
+                        <strong>Persona adicional:</strong> $500 MXN / noche<br>
+                        <span style="font-size: 0.75rem; opacity: 0.8;">*Tarifas más impuestos aplicables</span>
+                    </p>
+
+                    <p style="margin-bottom: 12px;">
+                        <a href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1783723372625&key=GRP&app=resvlink&_p=c11c3edc990466eee31e8de3eab3&__branch_flow_type=chrome_deepview&__branch_flow_id=1627117433924184485&inventoryMissing=true" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: bold; color: inherit; font-size: 0.9rem;">
+                            → Reservar en Línea con Tarifa Preferencial
+                        </a>
+                    </p>
+
+                    <p style="font-size: 0.85rem; line-height: 1.6;">
+                        Tel: <a href="tel:+529994543000" style="text-decoration: underline; color: inherit;">999 454 3000</a><br>
+                        Correo: <a href="mailto:midcy_reservaciones2@grupopresidente.com?subject=Reserva%20Boda%20Evelyn%20y%20Fernando" style="text-decoration: underline; color: inherit;">midcy_reservaciones2@grupopresidente.com</a><br>
+                        <em style="font-size: 0.75rem;">Cancelación sin cargo hasta 5 días antes de la llegada.</em>
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
+
+                <!-- HOTEL 3: BOUTIQUE HOTELS -->
+                <div style="margin-bottom: 25px; text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
+                        <strong>Hoteles Boutique</strong>
+                    </p>
+                    <p style="font-size: 0.85rem; margin-bottom: 15px;">
+                        Ingresa el código <strong>"EVY&FERNANDO"</strong> directo en sus sitios web para obtener tarifa especial:
+                    </p>
+
+                    <!-- Hotel Óntico -->
+                    <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Hotel Óntico Urban Design</strong><br>
+                        <a href="https://hotelontico.com.mx/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">hotelontico.com.mx</a><br>
+                        Tel: <a href="tel:+529994294747" style="text-decoration: underline; color: inherit;">999 429 4747</a> | <a href="https://instagram.com/hotelontico" target="_blank" style="text-decoration: underline; color: inherit;">@hotelontico</a>
+                    </p>
+
+                    <!-- Piedra de Agua -->
+                    <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
+                        <strong>Hotel Piedra de Agua</strong><br>
+                        <a href="https://piedradeagua.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">piedradeagua.com</a><br>
+                        Tel: <a href="tel:+529994242300" style="text-decoration: underline; color: inherit;">999 424 2300</a> | <a href="https://instagram.com/piedradeagua" target="_blank" style="text-decoration: underline; color: inherit;">@piedradeagua</a>
+                    </p>
+                </div>
+
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
+
+                <!-- HOTEL 4: PENDING -->
+                <div style="text-align: center;">
+                    <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; opacity: 0.8;">
+                        <strong>Holiday Inn Centro</strong><br>
+                        <em>Tarifas y detalles de reservación próximamente.</em>
+                    </p>
+                </div>
+            `
         }
     },
     { 
@@ -148,10 +434,23 @@ const slidesData = [
                 <p>To allow all our guests—including parents—a chance to fully immerse themselves in a night of celebration and fun, we have chosen for our wedding day to be an adults-only occasion. We hope this advance notice means you are still able to share our big day!</p>
                 <br>
                 <p><strong>Transportation (Shuttles)</strong></p>
-                <p>Pending.</p>
-                <br>
-                <p><strong>Hotel Recommendations</strong></p>
-                <p>Pending.</p>
+                <p style="margin-bottom: 15px;">For your convenience, transportation will be provided between Mérida and the venue.</p>
+                
+                <p style="margin-bottom: 12px; line-height: 1.5;">
+                    <strong>Pick-up:</strong> Hotel NH Collection<br>
+                    <strong>Time:</strong> 3:00 PM
+                </p>
+                
+                <p style="margin-bottom: 22px; line-height: 1.5;">
+                    <strong>Return Shuttles:</strong><br>
+                    Departing the Hacienda every hour starting at 10:00 PM.<br>The final shuttle will leave at 2:00 AM, dropping off at the same hotel.
+                </p>
+                
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 50%; margin: 0 auto 15px auto;"></div>
+                
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <em><strong>Note on Uber:</strong> You are welcome to arrive at the venue via Uber, however, please be aware that return transportation is exclusively via our provided shuttles. If you require a different schedule or independent transportation, please reach out to our event planner.</em>
+                </p>
             `,
             es: `
                 <p><strong>Código de Vestimenta: Formal</strong></p>
@@ -162,10 +461,23 @@ const slidesData = [
                 <p>Con el fin de ofrecer a todos nuestros invitados —incluyendo a los padres de familia— una gran noche de fiesta y diversión ininterrumpida, hemos optado por una celebración exclusiva para adultos. Confiamos en que este aviso anticipado les permita compartir con nosotros este día tan especial.</p>
                 <br>
                 <p><strong>Transporte (Shuttles)</strong></p>
-                <p>Próximamente.</p>
-                <br>
-                <p><strong>Hoteles Recomendados</strong></p>
-                <p>Próximamente.</p>
+                <p style="margin-bottom: 15px;">Para su mayor comodidad, contaremos con transporte redondo desde Mérida.</p>
+                
+                <p style="margin-bottom: 12px; line-height: 1.5;">
+                    <strong>Punto de encuentro:</strong> Hotel NH Collection<br>
+                    <strong>Hora de salida:</strong> 3:00 PM
+                </p>
+                
+                <p style="margin-bottom: 22px; line-height: 1.5;">
+                    <strong>Regresos:</strong><br>
+                    Saldrán de la Hacienda cada hora a partir de las 10:00 PM.<br>El último transporte saldrá a las 2:00 AM, regresando al mismo hotel.
+                </p>
+                
+                <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 50%; margin: 0 auto 15px auto;"></div>
+                
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <em><strong>Nota sobre Uber:</strong> Es posible llegar al evento pidiendo un Uber por su cuenta, pero considere que el regreso será únicamente a través de los transportes que hemos previsto. Si requiere un horario distinto o transporte independiente, por favor comuníquese con nuestro coordinador de eventos.</em>
+                </p>
             `
         }
     },
@@ -187,7 +499,6 @@ const slidesData = [
         isRSVP: true
     },
     { 
-        // img: 'https://i.pinimg.com/webp/736x/d1/82/ff/d182ff4ac47769508f0e224303287251.webp',
         img: 'assets/monogrampattern.webp', 
         subtitle: { en: 'Questions?', es: '¿Tienes Dudas?' }, 
         btnText: { en: 'Write Us', es: 'Escribirnos' }, 
@@ -208,7 +519,7 @@ const slidesData = [
             es: `
                 <p>¡No podemos esperar para celebrar con ustedes!</p>
                 <br>
-                <p>Para que su viaje y estancia sean lo más agradables posible, nuestra coordinadora de eventos está a su disposición para responder cualquier pregunta sobre la logística o la organización.</p>
+                <p>Para que su viaje y estancia sean lo más agradables posible, nuestro coordinador de eventos está a su disposición para responder cualquier pregunta sobre la logística o la organización.</p>
                 <br>
                 <p><strong>Joe Bolaños</strong><br>Event Planner</p>
                 <p><a href="tel:+529902317477" style="text-decoration: underline; color: inherit;">+52 990 231 7477</a></p>
@@ -242,7 +553,6 @@ function rebuildSwiper(initialIndex = 0) {
         const slideDiv = document.createElement('div');
         slideDiv.className = 'swiper-slide';
         
-        // 👇 AQUI ESTA LA MAGIA: Verifica si existe el monograma
         if (slide.monogramImg) {
             slideDiv.innerHTML = `<div class="slide-inner"><img src="${slide.monogramImg}" alt="Monogram" class="slide-monogram"></div>`;
         } else {
@@ -492,7 +802,6 @@ function generateRSVPForm(guestCount) {
     const t = translations[currentLang];
     let formHTML = `<div class="rsvp-step-container"><p>${t.reservedFor} <strong>${guestCount} ${t.seats}</strong></p><br>`;
     
-    // Iteramos según el número de invitados permitidos por el código
     for (let i = 1; i <= guestCount; i++) {
         formHTML += `
             <div class="guest-block">
@@ -505,6 +814,14 @@ function generateRSVPForm(guestCount) {
                 <div class="radio-group" id="attendance_group_${i}">
                     <label class="radio-label"><input type="radio" name="asistencia_${i}" value="si"> ${t.yes}</label>
                     <label class="radio-label"><input type="radio" name="asistencia_${i}" value="no"> ${t.no}</label>
+                </div>
+                
+                <!-- NUEVO CAMPO DE COMIDA AQUI -->
+                <label class="rsvp-label">${t.mealLabel}</label>
+                <div class="radio-group" id="meal_group_${i}">
+                    <label class="radio-label"><input type="radio" name="meal_${i}" value="Beef"> ${t.beef}</label>
+                    <label class="radio-label"><input type="radio" name="meal_${i}" value="Fish"> ${t.fish}</label>
+                    <label class="radio-label"><input type="radio" name="meal_${i}" value="Vegetarian"> ${t.vegetarian}</label>
                 </div>
         `;
 
@@ -551,30 +868,54 @@ function generateRSVPForm(guestCount) {
                     nameInput.classList.remove('input-error');
                 }
 
-                // Validar Asistencia a Boda
+                // Validar Asistencia
                 const radios = document.getElementsByName(`asistencia_${i}`);
                 let radioChecked = false;
                 let asistenciaVal = "Pending";
                 for (const r of radios) { 
                     if (r.checked) { 
                         radioChecked = true; 
-                        asistenciaVal = r.value === 'si' ? 'YES (SI)' : 'NO';
+                        asistenciaVal = r.value === 'si' ? 'YES' : 'NO';
                     } 
                 }
                 const radioContainer = document.getElementById(`attendance_group_${i}`).previousElementSibling;
                 if (!radioChecked) {
-                    radioContainer.style.color = "#cc0000"; // Rojo de validación
+                    radioContainer.style.color = "#cc0000"; 
                     isValid = false;
                 } else {
-                    radioContainer.style.color = "#660033"; // Color base restaurado
+                    radioContainer.style.color = "#660033"; 
+                }
+                
+                // Validar Comida (Sólo si dice que SÍ asiste)
+                let mealVal = "N/A";
+                const mealRadios = document.getElementsByName(`meal_${i}`);
+                const mealContainer = document.getElementById(`meal_group_${i}`).previousElementSibling;
+                
+                if (asistenciaVal === 'YES') {
+                    let mealChecked = false;
+                    for (const m of mealRadios) {
+                        if (m.checked) {
+                            mealChecked = true;
+                            mealVal = m.value;
+                        }
+                    }
+                    if (!mealChecked) {
+                        mealContainer.style.color = "#cc0000";
+                        isValid = false;
+                    } else {
+                        mealContainer.style.color = "#660033";
+                    }
+                } else {
+                    mealContainer.style.color = "#660033"; // Reset color if NO
                 }
 
                 formData[`Guest_${i}_Name`] = nameInput.value;
-                formData[`Guest_${i}_Attending_Wedding`] = asistenciaVal;
-                formData[`Guest_${i}_Diet`] = document.getElementById(`diet_${i}`).value || "None";
+                formData[`Guest_${i}_Attending`] = asistenciaVal;
+                formData[`Guest_${i}_Meal`] = mealVal;
+                formData[`Guest_${i}_Allergies`] = document.getElementById(`diet_${i}`).value || "None";
             }
 
-            // Validar Email principal (siendo el contacto)
+            // Validar Email
             const email1 = document.getElementById('email_1');
             if(email1) {
                 if(!email1.value.trim()) {
