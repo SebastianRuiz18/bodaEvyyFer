@@ -1,5 +1,8 @@
-// --- CONFIGURACIÓN DE IDIOMA ---
+// --- CONFIGURACIÓN DE GOOGLE SHEETS & IDIOMA ---
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzl_IEjDiCN8446U9uQMVImkOJKLrPmFYkri5zjYaZiFY-bc37sIVeXdoi_rHNQGjQh/exec";
+
 let currentLang = 'en'; // Default English
+let currentAccessCode = ''; // Almacena el código ingresado por el usuario
 
 const translations = {
     en: {
@@ -37,7 +40,7 @@ const translations = {
         artistSong: "Artist - Song",
         sendBtn: "Send Confirmation",
         sending: "Sending...",
-        errorSend: "Error Sending",
+        errorSend: "Error Sending. Please try again.",
         validationMsg: "Please complete the fields marked in red.",
         thankTitle: "Thank You!",
         thankMsg: "Your confirmation has been successfully received.",
@@ -78,7 +81,7 @@ const translations = {
         artistSong: "Artista - Canción",
         sendBtn: "Enviar Confirmación",
         sending: "Enviando...",
-        errorSend: "Error al Enviar",
+        errorSend: "Error al Enviar. Intenta de nuevo.",
         validationMsg: "Por favor completa los campos marcados en rojo.",
         thankTitle: "¡Gracias!",
         thankMsg: "Tu confirmación ha sido recibida con éxito.",
@@ -98,7 +101,7 @@ const accessCodes = {
     "FAMILIA6": 6
 };
 
-// DATOS DE SECCIONES (Adaptados a Evelyn & Fernando)
+// DATOS DE SECCIONES
 const slidesData = [
     { 
         img: 'assets/EvyFer.webp', 
@@ -224,7 +227,6 @@ const slidesData = [
                     We have secured special group rates at the following hotels for our wedding weekend in Mérida. We recommend booking early, as rates and room blocks are subject to availability.
                 </p>
 
-                <!-- HOTEL 1: NH COLLECTION -->
                 <div style="margin-bottom: 25px; text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
                         <strong>NH Collection Mérida Paseo Montejo</strong>
@@ -255,7 +257,6 @@ const slidesData = [
 
                 <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
 
-                <!-- HOTEL 2: COURTYARD MARRIOTT -->
                 <div style="margin-bottom: 25px; text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 8px;">
                         <strong>Courtyard by Marriott Mérida Downtown</strong>
@@ -284,7 +285,6 @@ const slidesData = [
 
                 <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
 
-                <!-- HOTEL 3: BOUTIQUE HOTELS -->
                 <div style="margin-bottom: 25px; text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
                         <strong>Boutique Hotels</strong>
@@ -293,14 +293,12 @@ const slidesData = [
                         Use promo code <strong>"EVY&FERNANDO"</strong> directly on their websites for a special discount:
                     </p>
 
-                    <!-- Hotel Óntico -->
                     <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
                         <strong>Hotel Óntico Urban Design</strong><br>
                         <a href="https://hotelontico.com.mx/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">hotelontico.com.mx</a><br>
                         Tel: <a href="tel:+529994294747" style="text-decoration: underline; color: inherit;">+52 999 429 4747</a> | <a href="https://instagram.com/hotelontico" target="_blank" style="text-decoration: underline; color: inherit;">@hotelontico</a>
                     </p>
 
-                    <!-- Piedra de Agua -->
                     <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
                         <strong>Hotel Piedra de Agua</strong><br>
                         <a href="https://piedradeagua.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">piedradeagua.com</a><br>
@@ -310,7 +308,6 @@ const slidesData = [
 
                 <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
 
-                <!-- HOTEL 4: PENDING -->
                 <div style="text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; opacity: 0.8;">
                         <strong>Holiday Inn Centro</strong><br>
@@ -323,7 +320,6 @@ const slidesData = [
                     Hemos gestionado tarifas preferenciales en los siguientes hoteles para su estancia en Mérida. Les recomendamos reservar con anticipación, ya que las tarifas y bloques de habitaciones están sujetos a disponibilidad.
                 </p>
 
-                <!-- HOTEL 1: NH COLLECTION -->
                 <div style="margin-bottom: 25px; text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
                         <strong>NH Collection Mérida Paseo Montejo</strong>
@@ -354,7 +350,6 @@ const slidesData = [
 
                 <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
 
-                <!-- HOTEL 2: COURTYARD MARRIOTT -->
                 <div style="margin-bottom: 25px; text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 8px;">
                         <strong>Courtyard by Marriott Mérida Downtown</strong>
@@ -383,7 +378,6 @@ const slidesData = [
 
                 <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
 
-                <!-- HOTEL 3: BOUTIQUE HOTELS -->
                 <div style="margin-bottom: 25px; text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 4px;">
                         <strong>Hoteles Boutique</strong>
@@ -392,14 +386,12 @@ const slidesData = [
                         Ingresa el código <strong>"EVY&FERNANDO"</strong> directo en sus sitios web para obtener tarifa especial:
                     </p>
 
-                    <!-- Hotel Óntico -->
                     <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
                         <strong>Hotel Óntico Urban Design</strong><br>
                         <a href="https://hotelontico.com.mx/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">hotelontico.com.mx</a><br>
                         Tel: <a href="tel:+529994294747" style="text-decoration: underline; color: inherit;">999 429 4747</a> | <a href="https://instagram.com/hotelontico" target="_blank" style="text-decoration: underline; color: inherit;">@hotelontico</a>
                     </p>
 
-                    <!-- Piedra de Agua -->
                     <p style="margin-bottom: 14px; line-height: 1.5; font-size: 0.9rem;">
                         <strong>Hotel Piedra de Agua</strong><br>
                         <a href="https://piedradeagua.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;">piedradeagua.com</a><br>
@@ -409,7 +401,6 @@ const slidesData = [
 
                 <div style="border-top: 1px solid rgba(102, 0, 51, 0.2); width: 40%; margin: 20px auto;"></div>
 
-                <!-- HOTEL 4: PENDING -->
                 <div style="text-align: center;">
                     <p style="text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; opacity: 0.8;">
                         <strong>Holiday Inn Centro</strong><br>
@@ -563,10 +554,7 @@ const mainHero = document.getElementById('main-hero');
 let swiper = null;
 
 function rebuildSwiper(initialIndex = 0) {
-    if (swiper !== null) {
-        swiper.destroy(true, true);
-    }
-
+    if (swiper !== null) swiper.destroy(true, true);
     swiperWrapper.innerHTML = '';
 
     slidesData.forEach(slide => {
@@ -578,7 +566,6 @@ function rebuildSwiper(initialIndex = 0) {
         } else {
             slideDiv.innerHTML = `<div class="slide-inner"><h2 class="slide-title">${slide.title[currentLang]}</h2></div>`;
         }
-        
         swiperWrapper.appendChild(slideDiv);
     });
 
@@ -594,7 +581,6 @@ function rebuildSwiper(initialIndex = 0) {
         roundLengths: true, 
         observer: true, 
         observeParents: true,
-
         breakpoints: { 320: { spaceBetween: 20 }, 768: { spaceBetween: 50 } },
         on: {
             init: function () { updateContent(this.realIndex); },
@@ -799,6 +785,7 @@ function initRSVPLogin() {
                 let rawCode = codeInput.value.toUpperCase().trim();
                 
                 if (accessCodes[rawCode]) {
+                    currentAccessCode = rawCode; // Guarda el código usado
                     generateRSVPForm(accessCodes[rawCode]);
                 } else {
                     errorMsg.style.display = 'block';
@@ -806,7 +793,6 @@ function initRSVPLogin() {
                 }
             });
             
-            // Quitar el error si el usuario vuelve a escribir
             codeInput.addEventListener('input', () => {
                  errorMsg.style.display = 'none';
                  codeInput.classList.remove('input-error');
@@ -836,7 +822,6 @@ function generateRSVPForm(guestCount) {
                     <label class="radio-label"><input type="radio" name="asistencia_${i}" value="no"> ${t.no}</label>
                 </div>
                 
-                <!-- NUEVO CAMPO DE COMIDA AQUI -->
                 <label class="rsvp-label">${t.mealLabel}</label>
                 <div class="radio-group" id="meal_group_${i}">
                     <label class="radio-label"><input type="radio" name="meal_${i}" value="Beef"> ${t.beef}</label>
@@ -871,15 +856,14 @@ function generateRSVPForm(guestCount) {
     
     detailBodyText.innerHTML = formHTML;
 
-    // LÓGICA DE ENVÍO Y VALIDACIÓN
+    // LÓGICA DE ENVÍO CON GOOGLE SHEETS
     setTimeout(() => {
         document.getElementById('rsvp-submit-final').addEventListener('click', (e) => {
             const btn = e.target;
             let isValid = true;
-            let formData = { _subject: `Wedding RSVP (${currentLang.toUpperCase()})`, _captcha: "false" };
+            let guestsData = [];
 
             for (let i = 1; i <= guestCount; i++) {
-                // Validar Nombre
                 const nameInput = document.getElementById(`name_${i}`);
                 if (!nameInput.value.trim()) {
                     nameInput.classList.add('input-error');
@@ -888,14 +872,13 @@ function generateRSVPForm(guestCount) {
                     nameInput.classList.remove('input-error');
                 }
 
-                // Validar Asistencia
                 const radios = document.getElementsByName(`asistencia_${i}`);
                 let radioChecked = false;
                 let asistenciaVal = "Pending";
                 for (const r of radios) { 
                     if (r.checked) { 
                         radioChecked = true; 
-                        asistenciaVal = r.value === 'si' ? 'YES' : 'NO';
+                        asistenciaVal = r.value === 'si' ? 'SÍ (YES)' : 'NO';
                     } 
                 }
                 const radioContainer = document.getElementById(`attendance_group_${i}`).previousElementSibling;
@@ -906,12 +889,11 @@ function generateRSVPForm(guestCount) {
                     radioContainer.style.color = "#660033"; 
                 }
                 
-                // Validar Comida (Sólo si dice que SÍ asiste)
                 let mealVal = "N/A";
                 const mealRadios = document.getElementsByName(`meal_${i}`);
                 const mealContainer = document.getElementById(`meal_group_${i}`).previousElementSibling;
                 
-                if (asistenciaVal === 'YES') {
+                if (asistenciaVal === 'SÍ (YES)') {
                     let mealChecked = false;
                     for (const m of mealRadios) {
                         if (m.checked) {
@@ -926,16 +908,17 @@ function generateRSVPForm(guestCount) {
                         mealContainer.style.color = "#660033";
                     }
                 } else {
-                    mealContainer.style.color = "#660033"; // Reset color if NO
+                    mealContainer.style.color = "#660033";
                 }
 
-                formData[`Guest_${i}_Name`] = nameInput.value;
-                formData[`Guest_${i}_Attending`] = asistenciaVal;
-                formData[`Guest_${i}_Meal`] = mealVal;
-                formData[`Guest_${i}_Allergies`] = document.getElementById(`diet_${i}`).value || "None";
+                guestsData.push({
+                    name: nameInput.value.trim(),
+                    attending: asistenciaVal,
+                    meal: mealVal,
+                    diet: document.getElementById(`diet_${i}`).value.trim() || "None"
+                });
             }
 
-            // Validar Email
             const email1 = document.getElementById('email_1');
             if(email1) {
                 if(!email1.value.trim()) {
@@ -943,17 +926,12 @@ function generateRSVPForm(guestCount) {
                     isValid = false;
                 } else {
                     email1.classList.remove('input-error');
-                    formData["Contact_Email"] = email1.value;
                 }
             }
             
-            const tel1 = document.getElementById('tel_1') ? document.getElementById('tel_1').value : '';
-            const message = document.getElementById('guest_message').value;
-            const song = document.getElementById('guest_song').value;
-
-            if(tel1) formData["Contact_Phone"] = tel1;
-            if(message) formData["Message"] = message;
-            if(song) formData["Song_Request"] = song;
+            const tel1 = document.getElementById('tel_1') ? document.getElementById('tel_1').value.trim() : '';
+            const message = document.getElementById('guest_message').value.trim();
+            const song = document.getElementById('guest_song').value.trim();
 
             const warningMsg = document.getElementById('form-warning');
             
@@ -962,10 +940,24 @@ function generateRSVPForm(guestCount) {
                 btn.textContent = t.sending;
                 btn.disabled = true;
 
-                // --- MODO DEMO ---
-                console.log("DATOS A ENVIAR (SIMULACIÓN):", formData);
+                const payload = {
+                    code: currentAccessCode,
+                    email: email1 ? email1.value.trim() : '',
+                    phone: tel1,
+                    message: message,
+                    song: song,
+                    guests: guestsData
+                };
 
-                setTimeout(() => {
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8"
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
                     detailBodyText.innerHTML = `
                         <div style="text-align:center; padding: 40px 0;">
                             <h3 class="story-heading">${t.thankTitle}</h3>
@@ -973,13 +965,18 @@ function generateRSVPForm(guestCount) {
                             <br><p>${t.seeYou}</p>
                         </div>
                     `;
-                }, 1500);
+                })
+                .catch((err) => {
+                    console.error("Error al enviar RSVP:", err);
+                    btn.textContent = t.errorSend;
+                    btn.disabled = false;
+                });
+
             } else {
                 warningMsg.style.display = 'block';
             }
         });
         
-        // Limpiar errores rojos al escribir/hacer click en inputs
         const allInputs = document.querySelectorAll('.rsvp-input, input[type="radio"]');
         allInputs.forEach(input => {
             input.addEventListener('input', (e) => {
