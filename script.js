@@ -1,8 +1,8 @@
 // --- CONFIGURACIÓN DE GOOGLE SHEETS & IDIOMA ---
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzl_IEjDiCN8446U9uQMVImkOJKLrPmFYkri5zjYaZiFY-bc37sIVeXdoi_rHNQGjQh/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwu7LeY3RovYP1bjB5uRQo4F7SvU-OkfgyxGs7pP9eJ1h1e7_OtbTIIh57P8sqtLrV4/exec";
 
 let currentLang = 'en'; // Default English
-let currentAccessCode = ''; // Almacena el código ingresado por el usuario
+let currentAccessCode = ''; 
 
 const translations = {
     en: {
@@ -23,7 +23,8 @@ const translations = {
         reservedFor: "You have access to",
         seats: "guest pass(es). Please enter the names.",
         nameLabel: "Full Name",
-        attendingLabel: "Will this guest be attending?",
+        attendingWeddingLabel: "Will this guest attend the Wedding? (Feb 20)",
+        welcomeDrinksLabel: "Will this guest attend Welcome Drinks? (Feb 19)",
         yes: "Yes",
         no: "No",
         mealLabel: "Meal Preference",
@@ -64,7 +65,8 @@ const translations = {
         reservedFor: "Tienes acceso para",
         seats: "lugar(es). Por favor ingresa los nombres.",
         nameLabel: "Nombre Completo",
-        attendingLabel: "¿Asistirá a la boda?",
+        attendingWeddingLabel: "¿Asistirá a la Boda? (20 Feb)",
+        welcomeDrinksLabel: "¿Asistirá al Cóctel de Bienvenida? (19 Feb)",
         yes: "Sí",
         no: "No",
         mealLabel: "Opción de Platillo",
@@ -785,7 +787,7 @@ function initRSVPLogin() {
                 let rawCode = codeInput.value.toUpperCase().trim();
                 
                 if (accessCodes[rawCode]) {
-                    currentAccessCode = rawCode; // Guarda el código usado
+                    currentAccessCode = rawCode; 
                     generateRSVPForm(accessCodes[rawCode]);
                 } else {
                     errorMsg.style.display = 'block';
@@ -816,10 +818,16 @@ function generateRSVPForm(guestCount) {
                 <label class="rsvp-label">${t.nameLabel}</label>
                 <input type="text" id="name_${i}" class="rsvp-input required-field" placeholder="">
                 
-                <label class="rsvp-label">${t.attendingLabel}</label>
+                <label class="rsvp-label">${t.attendingWeddingLabel}</label>
                 <div class="radio-group" id="attendance_group_${i}">
                     <label class="radio-label"><input type="radio" name="asistencia_${i}" value="si"> ${t.yes}</label>
                     <label class="radio-label"><input type="radio" name="asistencia_${i}" value="no"> ${t.no}</label>
+                </div>
+
+                <label class="rsvp-label">${t.welcomeDrinksLabel}</label>
+                <div class="radio-group" id="welcome_group_${i}">
+                    <label class="radio-label"><input type="radio" name="welcome_${i}" value="si"> ${t.yes}</label>
+                    <label class="radio-label"><input type="radio" name="welcome_${i}" value="no"> ${t.no}</label>
                 </div>
                 
                 <label class="rsvp-label">${t.mealLabel}</label>
@@ -864,6 +872,7 @@ function generateRSVPForm(guestCount) {
             let guestsData = [];
 
             for (let i = 1; i <= guestCount; i++) {
+                // 1. Validar Nombre
                 const nameInput = document.getElementById(`name_${i}`);
                 if (!nameInput.value.trim()) {
                     nameInput.classList.add('input-error');
@@ -872,28 +881,48 @@ function generateRSVPForm(guestCount) {
                     nameInput.classList.remove('input-error');
                 }
 
-                const radios = document.getElementsByName(`asistencia_${i}`);
-                let radioChecked = false;
-                let asistenciaVal = "Pending";
-                for (const r of radios) { 
+                // 2. Validar Asistencia Boda (20 Feb)
+                const radiosWedding = document.getElementsByName(`asistencia_${i}`);
+                let weddingChecked = false;
+                let weddingVal = "Pending";
+                for (const r of radiosWedding) { 
                     if (r.checked) { 
-                        radioChecked = true; 
-                        asistenciaVal = r.value === 'si' ? 'SÍ (YES)' : 'NO';
+                        weddingChecked = true; 
+                        weddingVal = r.value === 'si' ? 'SÍ (YES)' : 'NO';
                     } 
                 }
-                const radioContainer = document.getElementById(`attendance_group_${i}`).previousElementSibling;
-                if (!radioChecked) {
-                    radioContainer.style.color = "#cc0000"; 
+                const weddingContainer = document.getElementById(`attendance_group_${i}`).previousElementSibling;
+                if (!weddingChecked) {
+                    weddingContainer.style.color = "#cc0000"; 
                     isValid = false;
                 } else {
-                    radioContainer.style.color = "#660033"; 
+                    weddingContainer.style.color = "#660033"; 
+                }
+
+                // 3. Validar Welcome Drinks (19 Feb)
+                const radiosWelcome = document.getElementsByName(`welcome_${i}`);
+                let welcomeChecked = false;
+                let welcomeVal = "Pending";
+                for (const r of radiosWelcome) { 
+                    if (r.checked) { 
+                        welcomeChecked = true; 
+                        welcomeVal = r.value === 'si' ? 'SÍ (YES)' : 'NO';
+                    } 
+                }
+                const welcomeContainer = document.getElementById(`welcome_group_${i}`).previousElementSibling;
+                if (!welcomeChecked) {
+                    welcomeContainer.style.color = "#cc0000"; 
+                    isValid = false;
+                } else {
+                    welcomeContainer.style.color = "#660033"; 
                 }
                 
+                // 4. Validar Comida (Sólo si asiste a la boda)
                 let mealVal = "N/A";
                 const mealRadios = document.getElementsByName(`meal_${i}`);
                 const mealContainer = document.getElementById(`meal_group_${i}`).previousElementSibling;
                 
-                if (asistenciaVal === 'SÍ (YES)') {
+                if (weddingVal === 'SÍ (YES)') {
                     let mealChecked = false;
                     for (const m of mealRadios) {
                         if (m.checked) {
@@ -913,12 +942,14 @@ function generateRSVPForm(guestCount) {
 
                 guestsData.push({
                     name: nameInput.value.trim(),
-                    attending: asistenciaVal,
+                    attending: weddingVal,
+                    welcomeDrinks: welcomeVal,
                     meal: mealVal,
                     diet: document.getElementById(`diet_${i}`).value.trim() || "None"
                 });
             }
 
+            // Validar Email
             const email1 = document.getElementById('email_1');
             if(email1) {
                 if(!email1.value.trim()) {
