@@ -487,8 +487,28 @@ const slidesData = [
         btnText: { en: 'View Registry', es: 'Ver Mesa' }, 
         title: { en: 'Registry', es: 'Mesa de Regalos' }, 
         detailsContent: {
-            en: `<p><em>Registry details pending...</em></p>`,
-            es: `<p><em>Detalles de mesa de regalos próximamente...</em></p>`
+            en: `
+                <p style="margin-bottom: 20px; line-height: 1.6; font-size: 0.95rem;">
+                    Your presence at our wedding is the greatest gift of all. If you wish to honor us with a detail, we have created a honeymoon registry through Honeyfund to help us celebrate this next chapter together.
+                </p>
+
+                <p style="margin-top: 20px;">
+                    <a href="https://www.honeyfund.com/site/sandoval-mejia-02-20-2027" target="_blank" rel="noopener noreferrer" class="registry-btn">
+                        Honeyfund Registry
+                    </a>
+                </p>
+            `,
+            es: `
+                <p style="margin-bottom: 20px; line-height: 1.6; font-size: 0.95rem;">
+                    El mejor regalo es compartir este día con ustedes. Sin embargo, si desean tener un detalle con nosotros, hemos creado una mesa de regalos y fondo de luna de miel en Honeyfund para celebrar el inicio de esta nueva etapa.
+                </p>
+
+                <p style="margin-top: 20px;">
+                    <a href="https://www.honeyfund.com/site/sandoval-mejia-02-20-2027" target="_blank" rel="noopener noreferrer" class="registry-btn">
+                        Mesa de Regalos Honeyfund
+                    </a>
+                </p>
+            `
         }
     },
     { 

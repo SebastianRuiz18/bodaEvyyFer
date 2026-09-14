@@ -322,3 +322,29 @@ body.details-mode .middle-wrapper { opacity: 0 !important; transform: translateY
 .guest-number { font-family: 'DidotTitlePro', serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: #3c0000; margin-bottom: 12px; }
 .radio-group { display: flex; gap: 18px; margin-top: 10px; }
 .radio-label { font-family: 'DidotTitlePro', serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; color: #3c0000; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+/* =========================================
+   11. BOTÓN REGISTRY / MESA DE REGALOS
+   ========================================= */
+.registry-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 26px;
+    border: 1px solid #3c0000;
+    color: #3c0000 !important;
+    background-color: transparent;
+    font-family: 'DidotTitlePro', serif;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+.registry-btn:hover {
+    background-color: #3c0000;
+    color: #FFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(60, 0, 0, 0.15);
+}
